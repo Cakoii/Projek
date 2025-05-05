@@ -1,0 +1,317 @@
+/* === Root Variables === */
+:root {
+    --primary-bg: #e74c3c; /* Warm red */
+    --accent: #f1c40f; /* Golden yellow */
+    --text-color: #333; /* Charcoal */
+    --gradient-main: linear-gradient(to right, #fff5f5, #fffef0); /* Warm, light background */
+    --button-gradient: linear-gradient(to right, #e74c3c, #f1c40f); /* Red to yellow */
+    --button-hover: linear-gradient(to right, #c0392b, #d4ac0d); /* Deeper red/yellow */
+    --font-main: 'Poppins', Arial, sans-serif;
+}
+
+/* === Reset === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background: var(--gradient-main);
+    color: var(--text-color);
+    min-height: 100vh;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* === Header === */
+header {
+    background: var(--primary-bg);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* === Navigation === */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: var(--accent);
+    color: #fff;
+    transform: scale(1.08);
+    outline: none;
+}
+
+/* === Main === */
+main {
+    padding-top: 120px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 20px 40px;
+    text-align: center;
+    color:black;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--primary-bg);
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* === Carousel === */
+.carousel {
+    margin-top: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.carousel img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.carousel img:hover {
+    transform: scale(1.03);
+}
+
+/* === Buttons === */
+.button,
+.btn-animated {
+    background: var(--button-gradient);
+    padding: 14px 32px;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+}
+
+.button:hover,
+.button:focus,
+.btn-animated:hover,
+.btn-animated:focus {
+    background: var(--button-hover);
+    transform: translateY(-5px) scale(1.02);
+    outline: none;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-toggler {
+        display: block;
+        background-color: #fff;
+        border: none;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .navbar-nav.active {
+        display: flex;
+    }
+
+    .navbar-nav li a {
+        font-size: 20px;
+        padding: 10px 15px;
+    }
+
+    .carousel img {
+        height: 280px;
+    }
+
+    main {
+        padding: 40px 15px;
+    }
+}
+/* === About Page Styles === */
+.about-section {
+    background-color: #fffdf5;
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 100px auto 40px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+    color: var(--text-color);
+    text-align: center;
+}
+
+.about-section h2 {
+    color: var(--primary-bg);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+/* Info Boxes */
+.about-section .info-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.info-box {
+    background-color: #fefefe;
+    border-left: 6px solid var(--accent);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    flex: 1 1 280px;
+    max-width: 300px;
+}
+
+.info-box h3 {
+    color: var(--primary-bg);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    font-size: 1rem;
+}
+
+/* Join Button */
+.join-btn {
+    background: var(--button-gradient);
+    color: #fff;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 30px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.join-btn:hover {
+    background: var(--button-hover);
+    transform: translateY(-4px);
+}
+.get-involved-section {
+    text-align: center;
+    padding: 50px 15px;
+  }
+  
+  .get-involved-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffa94d;
+    margin-bottom: 20px;
+  }
+  
+  .animated-fade {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: black;
+    text-decoration: underline;
+  }
+  
+  .activities-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .activity-card {
+    background: #2c2f33;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 300px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .activity-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .activity-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .activity-card h3 {
+    font-size: 1.5rem;
+    color: #ffa94d;
+    margin-bottom: 10px;
+  }
+  
+  .activity-card p {
+    font-size: 1rem;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+  }
+  
+  .btn-animated {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ffa94d;
+    color: #000;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .btn-animated:hover {
+    background: #ff6f61;
+    color: #fff;
+  }
+  
